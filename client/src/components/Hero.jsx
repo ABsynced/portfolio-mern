@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section id="home" className="section flex min-h-screen flex-col items-center justify-center text-center pt-24">
       <motion.img
-     src="/public/pic.jpg"
+     src="/pic.jpg"
      alt="Profile photo"
      initial={{ opacity: 0, scale: 0.8 }}
      animate={{ opacity: 1, scale: 1 }}
