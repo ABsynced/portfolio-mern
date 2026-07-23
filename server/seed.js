@@ -18,7 +18,7 @@ const sampleProjects = [
     ],
     image: "/projects/dashboard_overview.png",
     repoUrl: "https://github.com/ABsynced/superstore-sales-analytics",
-    featured: true,
+    featured: false,
     order: 1,
   },
   {
@@ -48,7 +48,7 @@ const sampleProjects = [
     ],
     liveUrl: "https://portfolio-mern-ecru-seven.vercel.app/",
     repoUrl: "https://github.com/ABsynced/portfolio-mern",
-    featured: true,
+    featured: false,
     order: 3,
   },
   {
