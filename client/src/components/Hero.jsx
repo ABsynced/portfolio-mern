@@ -19,7 +19,9 @@ export default function Hero() {
         transition={{ duration: 0.5 }}
         className="glass mb-6 inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-slate-300"
       >
-        <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_rgba(52,211,153,0.6)]" />
+        <span className="relative flex h-3 w-3">
+      <span className="absolute inline-flex h-full w-full animate-ping-fast rounded-full bg-emerald-400 opacity-75" />    <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_rgba(52,211,153,0.6)]" />
+    </span>
         Available for an Internship / WerkStudent
       </motion.p>
 
