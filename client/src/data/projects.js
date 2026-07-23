@@ -65,6 +65,25 @@ export const placeholderProjects = [
     repoUrl: "https://github.com/ABsynced/Omnifood",
     featured: false,
   },
+  {
+    _id: "p5",
+    title: "This Portfolio — MERN Stack Website",
+    description:
+      "This very site: a full-stack portfolio built with React, Node.js/Express, and MongoDB, styled with Tailwind CSS. Features a live database-backed projects section, working contact form, and a dark glassmorphism design.",
+    image: "/projects/portfolio-preview.png",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Vite",
+      "Framer Motion",
+    ],
+    liveUrl: "https://portfolio-mern-ecru-seven.vercel.app/",
+    repoUrl: "https://github.com/ABsynced/portfolio-mern",
+    featured: true,
+  },
   // {
   //   _id: "p5",
   //   title: "Pharma ATC Portfolio & KPI Dashboard",

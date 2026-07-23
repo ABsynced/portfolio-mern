@@ -1,77 +1,75 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const Project = require('./models/Project');
+require("dotenv").config();
+const mongoose = require("mongoose");
+const Project = require("./models/Project");
 
 const sampleProjects = [
   {
-    title: 'Electric Vehicle Population Analysis',
+    title: "Superstore Sales Analytics",
     description:
-      'Full workflow analysis on the Electric Vehicle Population Dataset: data cleaning, EDA, visualizations, and automated reporting into PowerPoint.',
-    tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'PowerPoint', 'Jupyter Notebook'],
-    liveUrl: 'https://melika-niaz.vercel.app/#',
-    repoUrl: 'https://github.com/melikaniaz/ev-population-analysis',
+      "Uncovered a hard discount threshold costing $135K in lost profit, using a PostgreSQL star schema, SQL analysis, and an interactive Power BI dashboard.",
+    tags: [
+      "Python",
+      "Pandas",
+      "PostgreSQL",
+      "SQL",
+      "Power BI",
+      "PowerShell",
+      "Git",
+    ],
+    image: "/projects/dashboard_overview.png",
+    repoUrl: "https://github.com/ABsynced/superstore-sales-analytics",
     featured: true,
     order: 1,
   },
   {
-    title: 'Air Travel Dashboard',
+    title: "Omnifood — Food Subscription Landing Page",
     description:
-      'Identified airlines with the highest number of flights, compared average ticket prices, visualized market share, and highlighted flight networks.',
-    tags: ['MySQL', 'Database queries and views', 'Power BI Desktop', 'Dashboard and visualization'],
-    liveUrl: 'https://melika-niaz.vercel.app/#',
-    repoUrl: 'https://github.com/melikaniaz/-Air-Travel-Dashboard',
-    featured: true,
+      "Fully responsive landing page for a fictional food delivery subscription service. Built with modern HTML5, CSS3, and vanilla JavaScript, featuring a hero section, pricing plans, testimonials, and mobile-first responsive layouts across all breakpoints.",
+    image: "/projects/omnifood-hero.jpg",
+    tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
+    liveUrl: "https://absynced.github.io/Omnifood/",
+    repoUrl: "https://github.com/ABsynced/Omnifood",
+    featured: false,
     order: 2,
   },
   {
-    title: 'AdventureWorks Sales & Customer Insights',
-    description: 'Complete Business Intelligence pipeline on the AdventureWorks sample database.',
-    tags: ['SQL', 'MySQL', 'Power BI', 'Data Visualization', 'ETL', 'KPIs', 'DAX'],
-    liveUrl: 'https://melika-niaz.vercel.app/#',
-    repoUrl: 'https://github.com/melikaniaz/AdventureWorks-Sales-Insights',
+    title: "This Portfolio — MERN Stack Website",
+    description:
+      "This very site: a full-stack portfolio built with React, Node.js/Express, and MongoDB, styled with Tailwind CSS. Features a live database-backed projects section, working contact form, and a dark glassmorphism design.",
+    image: "/projects/portfolio-preview.png",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Vite",
+      "Framer Motion",
+    ],
+    liveUrl: "https://portfolio-mern-ecru-seven.vercel.app/",
+    repoUrl: "https://github.com/ABsynced/portfolio-mern",
     featured: true,
     order: 3,
   },
   {
-    title: 'BMW Worldwide Sales (2010–2024)',
+    title: "Coming Soon...",
     description:
-      'Power BI dashboard analyzing global BMW KPIs: total revenue, sales volume, electric growth, regional sales trends, and fuel type insights.',
-    tags: ['Power BI', 'Data Visualization', 'KPIs', 'DAX', 'Business Insights'],
-    liveUrl: 'https://melika-niaz.vercel.app/#',
-    repoUrl: 'https://github.com/melikaniaz/BMW-Worldwide-Sales-2010-2024-',
+      "Multi-page Power BI dashboard for retail sales performance and trends.",
+    tags: ["Power BI", "DAX", "Power Query"],
     featured: false,
     order: 4,
-  },
-  {
-    title: 'Pharma ATC Portfolio & KPI Dashboard',
-    description:
-      'Power BI dashboard on a 6-year pharmaceutical sales dataset (2014–2019, ATC level), tracking total sales, YoY growth, portfolio coverage, and ATC market share.',
-    tags: ['Power BI', 'KPIs', 'DAX', 'Pharma Sales', 'ATC Classification'],
-    liveUrl: 'https://melika-niaz.vercel.app/#',
-    repoUrl: 'https://github.com/melikaniaz/Pharma-ATC-Portfolio-KPI-Dashboard',
-    featured: false,
-    order: 5,
-  },
-  {
-    title: 'Retail Sales Dashboard',
-    description: 'Multi-page Power BI dashboard for retail sales performance and trends.',
-    tags: ['Power BI', 'DAX', 'Power Query'],
-    liveUrl: 'https://melika-niaz.vercel.app/#',
-    repoUrl: 'https://github.com/melikaniaz/powerbi-retail-dashboard',
-    featured: false,
-    order: 6,
   },
 ];
 
 const run = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-    console.log('Connected. Seeding...');
+    console.log("Connected. Seeding...");
     await Project.deleteMany({});
     await Project.insertMany(sampleProjects);
     console.log(`Seeded ${sampleProjects.length} projects.`);
   } catch (err) {
-    console.error('Seed error:', err.message);
+    console.error("Seed error:", err.message);
   } finally {
     await mongoose.disconnect();
     process.exit(0);
